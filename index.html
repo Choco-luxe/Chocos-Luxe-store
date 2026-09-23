@@ -286,7 +286,27 @@
     font-size: 15px;
   }
 }
+
+.section-title {
+  text-align: center;
+  color: #3b2116;
+  font-size: 30px;
+  margin: 45px 0 25px;
+  font-weight: 700;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #3b2116;
+  margin: 12px auto 0;
+  border-radius: 10px;
+}
+
 </style>
+
 </head>
 
 <body>
@@ -345,7 +365,7 @@
       </a>
     </div>
   </section>
-
+<h2 class="section-title">Shop by Category</h2>
   <section class="categories" id="categories">
 
     <div class="category">
