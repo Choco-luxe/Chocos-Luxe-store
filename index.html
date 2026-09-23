@@ -245,10 +245,12 @@
     data.forEach(product => {
       products.innerHTML += `
         <div class="product">
-          <h3>${product.product_name}</h3>
-          <p>Category: ${product.category}</p>
-          <p>Price: ₦${product.price}</p>
-          <p>Quantity available: ${product.quantity}</p>
+        <h3>${product["Product name"]}</h3>
+<p>Category: ${product.Category}</p>
+<p>Price: ₦${product.Price}</p>
+<p>Quantity available: ${product.Quantity}</p>
+<p>Color: ${product.Color}</p>
+<p>Size: ${product.Size}</p>
         </div>
       `;
     });
