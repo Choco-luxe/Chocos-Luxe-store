@@ -245,7 +245,8 @@
     data.forEach(product => {
       products.innerHTML += `
         <div class="product">
-          <img src="${product.Image}" alt="Product image">
+          <img src="${product.Image}" alt="Product image"
+     style="width:100%; height:300px; object-fit:cover; border-radius:10px;">
           <h3>${product["Product name"]}</h3>
           <p>Category: ${product.Category}</p>
           <p>Price: ₦${product.Price}</p>
