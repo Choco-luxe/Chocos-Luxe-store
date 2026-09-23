@@ -304,7 +304,40 @@
   margin: 12px auto 0;
   border-radius: 10px;
 }
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
+.category {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 5px 18px rgba(59, 33, 22, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 22px rgba(59, 33, 22, 0.18);
+}
+
+.category h3 {
+  color: #3b2116;
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.category p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
 </style>
 
 </head>
