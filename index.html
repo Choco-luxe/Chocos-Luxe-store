@@ -148,6 +148,22 @@
   font-weight: bold;
   margin-top: 10px;
 }
+    .product-order {
+  display: block;
+  background: #3b2116;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.product-order:hover {
+  background: #6b3e2e;
+}
     footer {
       background: #3b2116;
       color: white;
@@ -282,6 +298,11 @@
           <p>Quantity available: ${product.Quantity}</p>
           <p>Color: ${product.Color}</p>
           <p>Size: ${product.Size}</p>
+          <a class="product-order"
+   href="https://wa.me/2348129234302"
+   target="_blank">
+  Order Now
+</a>
         </div>
       `;
     });
