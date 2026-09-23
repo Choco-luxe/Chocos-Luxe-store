@@ -234,7 +234,7 @@
 
     const products = document.getElementById("products");
 
-    if (error) {
+        if (error) {
       products.innerHTML = "<p>Unable to load products.</p>";
       console.error(error);
       return;
@@ -245,12 +245,13 @@
     data.forEach(product => {
       products.innerHTML += `
         <div class="product">
-        <h3>${product["Product name"]}</h3>
-<p>Category: ${product.Category}</p>
-<p>Price: ₦${product.Price}</p>
-<p>Quantity available: ${product.Quantity}</p>
-<p>Color: ${product.Color}</p>
-<p>Size: ${product.Size}</p>
+          <img src="${product.Image}" alt="Product image">
+          <h3>${product["Product name"]}</h3>
+          <p>Category: ${product.Category}</p>
+          <p>Price: ₦${product.Price}</p>
+          <p>Quantity available: ${product.Quantity}</p>
+          <p>Color: ${product.Color}</p>
+          <p>Size: ${product.Size}</p>
         </div>
       `;
     });
