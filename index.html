@@ -229,7 +229,7 @@
 
   async function loadProducts() {
     const { data, error } = await supabaseClient
-      .from("products")
+      .from("Product")
       .select("*");
 
     const products = document.getElementById("products");
