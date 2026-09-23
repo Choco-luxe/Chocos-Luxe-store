@@ -425,6 +425,13 @@
 
   <!-- SHOP OUR PRODUCTS -->
   <section class="inventory">
+    <div class="product-search">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search products..."
+  >
+    </div>
     <h2>Shop Our Products</h2>
 
     <div id="products">
@@ -461,7 +468,18 @@
       .select("*");
 
     const products = document.getElementById("products");
+const searchInput = document.getElementById("searchInput");
 
+searchInput.addEventListener("input", () => {
+  const searchText = searchInput.value.toLowerCase();
+
+  document.querySelectorAll(".product").forEach(product => {
+    const productText = product.textContent.toLowerCase();
+
+    product.style.display =
+      productText.includes(searchText) ? "" : "none";
+  });
+});
         if (error) {
       products.innerHTML = "<p>Unable to load products.</p>";
       console.error(error);
