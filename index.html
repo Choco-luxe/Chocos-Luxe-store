@@ -481,11 +481,14 @@
           <p>Quantity available: ${product.Quantity}</p>
           <p>Color: ${product.Color}</p>
           <p>Size: ${product.Size}</p>
-          <a class="product-order"
-   href="https://wa.me/2348129234302?text=Hello%20Choco's%20Luxe,%20I%20would%20like%20to%20order%20${encodeURIComponent(product["Product name"])}."
-   target="_blank">
-  Order Now
-</a>
+          ${product.Quantity > 0
+  ? `<a class="product-order"
+       href="https://wa.me/2348129234302?text=Hello%20Choco's%20Luxe,%20I%20would%20like%20to%20order%20${encodeURIComponent(product["Product name"])}."
+       target="_blank">
+       Order Now
+     </a>`
+  : `<p class="out-of-stock">Out of Stock</p>`
+    }
         </div>
       `;
     });
