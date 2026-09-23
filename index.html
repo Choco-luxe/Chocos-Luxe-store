@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,12 +19,14 @@
       text-align: center;
       padding: 40px 20px;
     }
-.logo {
-  width: 180px;
-  height: auto;
-  display: block;
-  margin: 0 auto 15px;
-}
+
+    .logo {
+      width: 180px;
+      height: auto;
+      display: block;
+      margin: 0 auto 15px;
+    }
+
     header h1 {
       margin: 0;
       font-size: 42px;
@@ -86,6 +87,38 @@
       font-weight: bold;
     }
 
+    .inventory {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .inventory h2 {
+      color: #3b2116;
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    #products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      width: 260px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+      text-align: left;
+    }
+
+    .product h3 {
+      color: #3b2116;
+      text-align: center;
+    }
+
     footer {
       background: #3b2116;
       color: white;
@@ -99,10 +132,13 @@
 <body>
 
   <header>
-    <img src="file_00000000fb10820784499717006fa8b1.png" alt="Choco's Luxe Logo" class="logo">
+    <img src="file_00000000fb10820784499717006fa8b1.png"
+         alt="Choco's Luxe Logo"
+         class="logo">
+
     <h1>Choco's Luxe</h1>
     <p>Where Fashion Meets Confidence</p>
-</header>
+  </header>
 
   <section class="welcome">
     <h2>Welcome to Choco's Luxe!</h2>
@@ -116,17 +152,25 @@
       At Choco's Luxe, we have lovely outfits for women, men and children,
       carefully selected to give you that beautiful and confident look.
     </p>
+
     <div class="category">
-  <h3>Black Purse</h3>
-      <img src="Screenshot_20260922_194748.jpg" alt="Black Purse" style="width:100%; max-width:250px; border-radius:10px;">
-  <p>Category: Ladies</p>
-  <p>Price: ₦15,000</p>
-  <p>Quantity available: 2</p>
-  <p>Color: Black</p>
-  <p>Size: Medium</p>
-  <a class="whatsapp" href="https://wa.me/2348129234302" target="_blank">
-    Order Now
-  </a>
+      <h3>Black Purse</h3>
+
+      <img src="Screenshot_20260922_194748.jpg"
+           alt="Black Purse"
+           style="width:100%; max-width:250px; border-radius:10px;">
+
+      <p>Category: Ladies</p>
+      <p>Price: ₦15,000</p>
+      <p>Quantity available: 2</p>
+      <p>Color: Black</p>
+      <p>Size: Medium</p>
+
+      <a class="whatsapp"
+         href="https://wa.me/2348129234302"
+         target="_blank">
+        Order Now
+      </a>
     </div>
   </section>
 
@@ -154,8 +198,17 @@
 
   </section>
 
+  <!-- SHOP OUR PRODUCTS -->
+  <section class="inventory">
+    <h2>Shop Our Products</h2>
+
+    <div id="products">
+      <p>Loading products...</p>
+    </div>
+  </section>
+
   <a class="whatsapp"
-     href="https://wa.me/2348129234302
+     href="https://wa.me/2348129234302"
      target="_blank">
     Order on WhatsApp
   </a>
