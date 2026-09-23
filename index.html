@@ -182,11 +182,28 @@
   transform: translateY(-2px);
 }
     footer {
-      background: #3b2116;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
+  background: #3b2116;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+  font-size: 14px;
+  line-height: 1.6;
+    }
+    @media (max-width: 600px) {
+  #products {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px 5px;
+  }
+
+  .product {
+    width: 100%;
+  }
+
+  .product img {
+    height: 300px;
+  }
     }
   </style>
 </head>
@@ -276,7 +293,8 @@
   </a>
 
   <footer>
-    <p>© 2026 Choco's Luxe. All Rights Reserved.</p>
+  <p>© 2026 Choco's Luxe. All Rights Reserved.</p>
+  <p>Fashion • Elegance • Confidence</p>
   </footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
