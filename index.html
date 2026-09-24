@@ -542,7 +542,7 @@ searchInput.addEventListener("input", () => {
       console.error(error);
       return;
     }
-
+window.productsData = data;
     products.innerHTML = "";
 
     data.forEach(product => {
@@ -558,6 +558,10 @@ searchInput.addEventListener("input", () => {
           <p>Quantity available: ${product.Quantity}</p>
           <p>Color: ${product.Color}</p>
           <p>Size: ${product.Size}</p>
+          <button class="view-details"
+        onclick="showProductDetails(${product.Id})">
+  View Details
+</button>
           ${product.Quantity > 0
   ? `<a class="product-order"
        href="https://wa.me/2348129234302?text=Hello%20Choco's%20Luxe,%20I%20would%20like%20to%20order%20${encodeURIComponent(product["Product name"])}."
@@ -605,6 +609,22 @@ function filterProducts(category) {
   });
 
   products.forEach(product => container.appendChild(product));
+  }
+  function showProductDetails(productId) {
+  const product = window.productsData.find(
+    item => item.Id === productId
+  );
+
+  if (!product) return;
+
+  alert(
+    "Product: " + product["Product name"] +
+    "\nCategory: " + product.Category +
+    "\nPrice: ₦" + product.Price +
+    "\nQuantity: " + product.Quantity +
+    "\nColor: " + product.Color +
+    "\nSize: " + product.Size
+  );
   }
   loadProducts();
 </script>
