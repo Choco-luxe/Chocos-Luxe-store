@@ -373,6 +373,73 @@
   background: #6b3e2e;
   transform: translateY(-2px);
 }
+    .product-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.product-modal-content {
+  background: #fffaf7;
+  width: 100%;
+  max-width: 450px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.product-modal-content img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.product-modal-content h2 {
+  color: #3b2116;
+  margin-bottom: 15px;
+}
+
+.product-modal-content p {
+  color: #5a4034;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.close-modal {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  border: none;
+  background: #3b2116;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#modalOrder {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  }
 </style>
 
 </head>
@@ -503,7 +570,24 @@
     Chat with us on WhatsApp
   </a>
   </section>
+<div id="productModal" class="product-modal">
+  <div class="product-modal-content">
+    <button class="close-modal" onclick="closeProductDetails()">×</button>
 
+    <img id="modalImage" src="" alt="Product image">
+
+    <h2 id="modalName"></h2>
+    <p id="modalCategory"></p>
+    <p id="modalPrice"></p>
+    <p id="modalQuantity"></p>
+    <p id="modalColor"></p>
+    <p id="modalSize"></p>
+
+    <a id="modalOrder" class="product-order" href="" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+</div>
   <footer>
   <p>© 2026 Choco's Luxe. All Rights Reserved.</p>
   <p>Fashion • Elegance • Confidence</p>
@@ -617,15 +701,24 @@ function filterProducts(category) {
 
   if (!product) return;
 
-  alert(
-    "Product: " + product["Product name"] +
-    "\nCategory: " + product.Category +
-    "\nPrice: ₦" + product.Price +
-    "\nQuantity: " + product.Quantity +
-    "\nColor: " + product.Color +
-    "\nSize: " + product.Size
-  );
-  }
+  document.getElementById("modalImage").src = product.Image;
+  document.getElementById("modalName").textContent = product["Product name"];
+  document.getElementById("modalCategory").textContent = "Category: " + product.Category;
+  document.getElementById("modalPrice").textContent = "Price: ₦" + product.Price;
+  document.getElementById("modalQuantity").textContent = "Quantity: " + product.Quantity;
+  document.getElementById("modalColor").textContent = "Color: " + product.Color;
+  document.getElementById("modalSize").textContent = "Size: " + product.Size;
+
+  document.getElementById("modalOrder").href =
+    "https://wa.me/2348129234302?text=Hello%20Choco's%20Luxe,%20I%20would%20like%20to%20order%20" +
+    encodeURIComponent(product["Product name"]) + ".";
+
+  document.getElementById("productModal").style.display = "flex";
+}
+
+function closeProductDetails() {
+  document.getElementById("productModal").style.display = "none";
+}
   loadProducts();
 </script>
 
