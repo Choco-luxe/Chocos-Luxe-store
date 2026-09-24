@@ -468,7 +468,13 @@
   >
     </div>
     <h2>Shop Our Products</h2>
-
+<div class="category-filter">
+  <button onclick="filterProducts('all')">All</button>
+  <button onclick="filterProducts('Ladies')">Ladies</button>
+  <button onclick="filterProducts('Men')">Men</button>
+  <button onclick="filterProducts('Children')">Children</button>
+  <button onclick="filterProducts('Shoes & Accessories')">Shoes & Accessories</button>
+</div>
     <div id="products">
       <p>Loading products...</p>
     </div>
@@ -553,7 +559,20 @@ searchInput.addEventListener("input", () => {
       `;
     });
   }
+function filterProducts(category) {
+  document.querySelectorAll(".product").forEach(product => {
+    const productCategory = product.querySelector("p")?.textContent || "";
 
+    if (
+      category === "all" ||
+      productCategory.toLowerCase().includes(category.toLowerCase())
+    ) {
+      product.style.display = "";
+    } else {
+      product.style.display = "none";
+    }
+  });
+  }
   loadProducts();
 </script>
 
