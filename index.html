@@ -570,7 +570,7 @@
     Chat with us on WhatsApp
   </a>
   </section>
-<div id="productModal" class="product-modal">
+<div id="productModal" class="product-modal" onclick="closeProductDetailsOutside(event)">
   <div class="product-modal-content">
     <button class="close-modal" onclick="closeProductDetails()">×</button>
 
@@ -718,6 +718,12 @@ function filterProducts(category) {
 
 function closeProductDetails() {
   document.getElementById("productModal").style.display = "none";
+}
+
+function closeProductDetailsOutside(event) {
+  if (event.target.id === "productModal") {
+    closeProductDetails();
+  }
 }
   loadProducts();
 </script>
