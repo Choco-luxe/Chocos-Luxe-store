@@ -766,7 +766,13 @@ function closeProductDetailsOutside(event) {
     closeProductDetails();
   }
 }
-  loadProducts();
+loadProducts();
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js");
+  });
+}
 </script>
 
 </body>
