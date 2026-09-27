@@ -1,1 +1,18 @@
 
+{
+  "name": "Choco's Luxe",
+  "short_name": "Choco's Luxe",
+  "description": "Fashion, elegance and confidence for women, men and children.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff8f2",
+  "theme_color": "#3b2116",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "file_00000000fb10820784499717006fa8b1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
